@@ -9,7 +9,7 @@ var result = document.getElementById("result");
 function check() {
      var number = +document.getElementById("number").value;
 
-     if (number < 1 || number > 100) {
+     if (number < 1 || number > 100 || typeof(number)===String) {
           result = "Hãy nhập số trong khoảng từ 1 đến 100"
      } else {
           guessed_num.push(number)
@@ -36,6 +36,8 @@ function check() {
           result = "You Lose!!!"
           document.getElementById("guessBtn").disabled = true;
      }
+
+     document.getElementById("number").value ='';
 
      document.getElementById("result").innerHTML= result;
 
